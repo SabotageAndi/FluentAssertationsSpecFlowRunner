@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
+using FluentAssertions.Execution;
 using TechTalk.SpecFlow;
 
 namespace FluentAssertationsSpecFlowRunner
@@ -27,6 +28,7 @@ namespace FluentAssertationsSpecFlowRunner
         public void ThenTheResultShouldBeOnTheScreen(int p0)
         {
             _sum.Should().Be(p0);
+            Execute.Assertion.FailWith("Failing");
         }
     }
 }
